@@ -38,6 +38,8 @@ soundtrack.play();
 // on key down
 
 document.addEventListener("keydown", moveUp);
+document.addEventListener("click", moveUp);
+
 
 function moveUp() {
     bY -= 60;
