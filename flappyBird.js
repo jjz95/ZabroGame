@@ -22,6 +22,7 @@ var gap = 250;
 var constant;
 let yDiff = 0
 let isYExceededThreshold = false;
+let isFirstUserInteraction = true;
 
 var bX = 10;
 var bY = 40;
@@ -34,7 +35,6 @@ var soundtrack = new Audio();
 
 soundtrack.src = "sounds/pink floyd - another brick in the wall.mp3"
 
-soundtrack.play();
 // on key down
 
 document.addEventListener("keydown", moveUp);
@@ -43,6 +43,10 @@ document.addEventListener("click", moveUp);
 
 function moveUp() {
     bY -= 60;
+    if (isFirstUserInteraction){
+        soundtrack.play();
+        isFirstUserInteraction = false;
+    }
 }
 
 // pipe coordinates
